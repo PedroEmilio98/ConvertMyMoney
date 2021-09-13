@@ -1,0 +1,20 @@
+body{
+    text-align: center;
+}
+
+
+
+input{
+    border: thin black;
+    background: rgb(206, 199, 199);
+    display: block;
+    position: relative;
+    left: 40%;
+    padding: 20px 40px;
+    margin: 5px;
+    font-size:x-large;
+}
+
+button{
+    
+}
