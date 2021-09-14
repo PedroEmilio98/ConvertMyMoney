@@ -1,9 +1,8 @@
 <%- include('header') %>
-    <link href="public/styles.css" rel="stylesheet">
-    <h1>Convert</h1>
-    <form>
-        <input placeholder="cotação">
-        <input placeholder="Dolares">
+
+    <form method="GET" action="/conversao">
+        <input name="cotacao" placeholder="cotação">
+        <input name="dolares" placeholder="Dolares">
         <button>Converter</button>
     </form>
     <%- include('footer') %>
