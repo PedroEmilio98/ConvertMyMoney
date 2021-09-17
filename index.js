@@ -18,7 +18,7 @@ app.listen(3000, err => {
 })
 
 
-app.get('/', async (req, res) => {
+/*app.get('/', async (req, res) => {
     const cotacaoDolarCompra = (await getDolar(urlDolar)).cotacaoCompra
     const cotacaoDolarVenda = (await getDolar(urlDolar)).cotacaoVenda
     res.render('home', {
@@ -26,35 +26,38 @@ app.get('/', async (req, res) => {
         cotacaoCompra: convert.toMoney(cotacaoDolarCompra),
         cotacaoVenda: convert.toMoney(cotacaoDolarVenda)
     })
-})
+})*/
 
-app.get('/conversao', async (req, res) => {
+app.get('/', async (req, res) => {
     const cotacaoDolarCompra = (await getDolar(urlDolar)).cotacaoCompra
     const cotacaoDolarVenda = (await getDolar(urlDolar)).cotacaoVenda
     const { cotacaoManual } = req.query
-    const { dolares } = req.query
+    let { dolares } = req.query
+    if (!dolares) {
+        dolares = 1
+    }
     const resultadoManual = convert.convert(cotacaoManual, dolares)
-    const resultadoCompra = convert.convert(cotacaoDolarCompra, dolares)
-    const resultadoVenda = convert.convert(cotacaoDolarVenda, dolares)
-    if (!cotacaoManual && cotacaoDolarCompra > 0 && cotacaoDolarVenda > 0 && dolares >= 0) {
-        res.render('conversao', {
+    let cotacao = cotacaoDolarVenda
+    let resultadoCompra = convert.convert(cotacaoDolarCompra, dolares)
+    let resultadoVenda = convert.convert(cotacaoDolarVenda, dolares)
+    if (cotacaoManual) {
+        cotacao = cotacaoManual
+        resultadoCompra = resultadoManual
+        resultadoVenda = resultadoManual
+    }
+    if (cotacaoDolarCompra > 0 && cotacaoDolarVenda > 0) {
+        res.render('home', {
             error: false,
-            cotacaoManual: false,
+            cotacao: convert.toMoney(cotacao),
+            cotacaoManual: convert.toMoney(cotacaoManual),
             resultadoCompra: convert.toMoney(resultadoCompra),
             resultadoVenda: convert.toMoney(resultadoVenda),
             cotacaoCompra: convert.toMoney(cotacaoDolarCompra),
             cotacaoVenda: convert.toMoney(cotacaoDolarVenda),
             dolares: convert.toMoney(dolares)
         })
-    } else if (cotacaoManual) {
-        res.render('conversao', {
-            error: false,
-            resultadoManual: convert.toMoney(resultadoManual),
-            cotacaoManual: convert.toMoney(cotacaoManual),
-            dolares: convert.toMoney(dolares)
-        })
     } else {
-        res.render('conversao', {
+        res.render('home', {
             error: 'resultado inválido',
         })
 
