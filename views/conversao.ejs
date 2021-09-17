@@ -1,14 +1,25 @@
 <%- include('header') %>
     <% if(error){ %>
         <%= error %>
-            <% }else{ %>
-
-                <h1>Cotacao: <%= cotacao %>
+            <%} else if(cotacaoManual){ %>
+                <h1>Cotacao: <%= cotacaoManual %>
                 </h1>
                 <h1>Dolares: <%= dolares %>
                 </h1>
-                <h1>Resultado: <%= resultado %>
+                <h1>Valor: <%= resultadoManual %>
                 </h1>
-                <% } %>
+                <% }else{ %>
 
-                    <%- include('footer') %>
+                    <h1>Cotacao para venda: <%= cotacaoVenda %>
+                    </h1>
+                    <h1>Cotacao para compra: <%= cotacaoCompra %>
+                    </h1>
+                    <h1>Dolares: <%= dolares %>
+                    </h1>
+                    <h1>Valor de venda: <%= resultadoVenda %>
+                    </h1>
+                    <h1>Valor de compra: <%= resultadoCompra %>
+                    </h1>
+                    <% } %>
+
+                        <%- include('footer') %>
