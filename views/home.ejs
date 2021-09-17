@@ -1,8 +1,14 @@
 <%- include('header') %>
 
-    <form method="GET" action="/conversao">
-        <input name="cotacaoManual" placeholder=<%=cotacaoVenda %>>
-        <input name="dolares" placeholder="Dolares">
-        <button>Converter</button>
+
+
+    <form method="GET" action="/">
+        <input name="cotacaoManual" value=<%=cotacao %> placeholder= <%=cotacaoVenda %> >
+            <input name="dolares" placeholder="Dolares" value=<%=dolares %>>
+            <h1>Valor de venda: <%= resultadoVenda %>
+            </h1>
+            <h1>Valor de compra: <%= resultadoCompra %>
+            </h1>
+            <button>Converter</button>
     </form>
     <%- include('footer') %>
