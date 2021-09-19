@@ -17,13 +17,6 @@
             "methods": [
                 "GET"
             ]
-        },
-        {
-            "src": "/cotacao",
-            "dest": "/index.js",
-            "methods": [
-                "GET"
-            ]
         }
     ]
 }
