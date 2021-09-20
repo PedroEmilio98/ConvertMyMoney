@@ -11,10 +11,10 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 
 app.get('/', async (req, res) => {
-
-    const cotacaoDolarCompra = (await getDolar()).cotacaoCompra
-    const cotacaoDolarVenda = (await getDolar()).cotacaoVenda
-    const horaCotacao = (await getDolar()).dataHoraCotacao
+    const infos = (await getDolar())
+    const cotacaoDolarCompra = infos.cotacaoCompra
+    const cotacaoDolarVenda = infos.cotacaoVenda
+    const horaCotacao = infos.dataHoraCotacao
     const { cotacaoManual } = req.query
     let { dolares } = req.query
     if (!dolares) {
