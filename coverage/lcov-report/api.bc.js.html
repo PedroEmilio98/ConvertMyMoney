@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">67.74% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>21/31</span>
+                <span class='fraction'>32/32</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">90% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>18/20</span>
+                <span class='fraction'>20/20</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">67.74% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>21/31</span>
+                <span class='fraction'>31/31</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -114,7 +114,10 @@
 <a name='L55'></a><a href='#L55'>55</a>
 <a name='L56'></a><a href='#L56'>56</a>
 <a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -144,23 +147,26 @@
 <span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -201,25 +207,28 @@ const getUrlDolar = () =&gt; {
     return url
 }
 &nbsp;
-const getDolar = <span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {
-    const urlDolar = <span class="cstat-no" title="statement not covered" >getUrlDolar()</span>
-    const get1 = <span class="cstat-no" title="statement not covered" >await axios.get(urlDolar)</span>
-    let cotacaoCompra = <span class="cstat-no" title="statement not covered" >null</span>
-    let cotacaoVenda = <span class="cstat-no" title="statement not covered" >null</span>
-    let dataHoraCotacao = <span class="cstat-no" title="statement not covered" >'cotação indisponível'</span>
-<span class="cstat-no" title="statement not covered" >    if (get1.data.value[0] != null) {</span>
-<span class="cstat-no" title="statement not covered" >        cotacaoCompra = await get1.data.value[0].cotacaoCompra</span>
-<span class="cstat-no" title="statement not covered" >        cotacaoVenda = await get1.data.value[0].cotacaoVenda</span>
-<span class="cstat-no" title="statement not covered" >        dataHoraCotacao = await get1.data.value[0].dataHoraCotacao</span>
+const getDolar = ({ getUrlDolar }) =&gt; async () =&gt; {
+    const urlDolar = getUrlDolar()
+    const get1 = await axios.get(urlDolar)
+    let cotacaoCompra = null
+    let cotacaoVenda = null
+    let dataHoraCotacao = 'cotação indisponível'
+    if (get1.data.value[0] != null) {
+        cotacaoCompra = await get1.data.value[0].cotacaoCompra
+        cotacaoVenda = await get1.data.value[0].cotacaoVenda
+        dataHoraCotacao = await get1.data.value[0].dataHoraCotacao
     }
-<span class="cstat-no" title="statement not covered" >    return { cotacaoCompra, cotacaoVenda, dataHoraCotacao }</span>
+    return { cotacaoCompra, cotacaoVenda, dataHoraCotacao }
 &nbsp;
 &nbsp;
 }
 &nbsp;
 module.exports = {
-    getDolar,
-    getUrlDolar
+    getDolar: getDolar({ getUrlDolar }),
+    getUrlDolar,
+    pure: {
+        getDolar
+    }
 }
 &nbsp;
 &nbsp;
@@ -235,7 +244,7 @@ module.exports = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Sep 20 2021 12:14:55 GMT-0300 (Horário Padrão de Brasília)
+                at Mon Sep 20 2021 16:08:03 GMT-0300 (Horário Padrão de Brasília)
             </div>
         </div>
         <script src="prettify.js"></script>
