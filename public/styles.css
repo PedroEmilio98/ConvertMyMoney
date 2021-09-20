@@ -60,3 +60,39 @@ button{
 #horaCotacao{
     font-size: small;
 }
+
+@media only screen and (max-device-width: 600px) {
+    form{
+        margin-top: 5%;
+        width: 100%;
+    }
+    input{
+        padding: 40px 80px;
+        font-size: xx-large;
+    }
+    label{
+        font-size: xx-large;
+    }
+    button{
+        padding: 4% 10%;
+        margin: 7%;
+    }
+  
+    .campoFormulario{
+        width: 50%;
+        padding: 3%;
+    }
+    .cabecalho{
+        padding: 8%;
+    }
+    .painelResultado{
+        width: 80%;
+        font-size: xx-large;
+    }
+    #horaCotacao{
+        font-size:medium;
+    }
+    #info{
+        font-size: x-large;
+    }
+    }

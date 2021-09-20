@@ -6,7 +6,7 @@
         <div class="campoFormulario">
             <label>Cotação*: </label>
             <input name="cotacaoManual" value=<%=cotacao %> placeholder= <%=cotacaoVenda %> >
-                <p>*Para usar a cotação do banco central, deixe em branco</p>
+                <p id="info">*Para usar a cotação do banco central, deixe em branco</p>
         </div>
         <div class="campoFormulario">
             <label>Quantidade em dólares: </label>
@@ -15,11 +15,18 @@
         <button>Converter</button>
     </form>
     <div class="painelResultado">
-        <h1>Valor de venda: <%= 'R$' + ' ' + resultadoVenda %>
+        <h1>Valor de venda:
+            <div>
+                <%= 'R$' + ' ' + resultadoVenda %>
+            </div>
         </h1>
-        <h1>Valor de compra: <%= 'R$' + ' ' + resultadoCompra %>
+        <h1>Valor de compra:
+            <div>
+                <%= 'R$' + ' ' + resultadoCompra %>
+            </div>
         </h1>
         <h1 id="horaCotacao">Hora da cotação: <%= horaCotacao %>
         </h1>
+
     </div>
     <%- include('footer') %>
